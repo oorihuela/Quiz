@@ -22,3 +22,31 @@ footer, input
     font-size:large;
 }
 
+.credits_wrapper
+{
+    min-height:275px;
+    margin:auto 15%;
+    display:block; 
+}
+
+.imagen_credito
+{
+    float:left;
+    margin-right:15px;    
+    display:inline-block;
+    text-align:center;
+    width:215px;
+}
+
+.imagen_credito img
+{
+    border:1px solid #000000;
+}
+
+.author_credits
+{
+    float:left;
+    display:inline-block;
+    width:215px;
+    font-size:12px;
+}
