@@ -12,4 +12,9 @@ router.get('/', function(req, res) {
 router.get('/quizes/question', quiz_controller.question);
 router.get('/quizes/answer', quiz_controller.answer);
 
+/* Creditos */
+router.get('/author', function (req, res) {
+    res.render('author');
+});
+
 module.exports = router;
