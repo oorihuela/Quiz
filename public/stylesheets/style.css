@@ -46,9 +46,10 @@ nav span
 .credits_wrapper
 {
     min-height:150px;
-    margin:auto 35%;
+    margin:auto 1% auto 32%;
     display:block; 
-    width:100%;
+    /*width:100%;*/
+    text-align:center;
 }
 
 .imagen_credito
