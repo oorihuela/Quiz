@@ -8,9 +8,13 @@ router.get('/', function(req, res) {
   res.render('index', { title: 'Quiz' });
 });
 
-/* GET Question & Answer */
-router.get('/quizes/question', quiz_controller.question);
-router.get('/quizes/answer', quiz_controller.answer);
+// Autoload de comandos con :quizId
+router.param('quizId', quiz_controller.load); // Autoload :quizId
+
+/* Definición de rutas de Quizes */
+router.get('/quizes', quiz_controller.index);
+router.get('/quizes/:quizId(\\d+)', quiz_controller.show);
+router.get('/quizes/:quizId(\\d+)/answer', quiz_controller.answer);
 
 /* Creditos */
 router.get('/author', function (req, res) {
