@@ -16,7 +16,7 @@ router.get('/quizes', quiz_controller.index);
 router.get('/quizes/:quizId(\\d+)', quiz_controller.show);
 router.get('/quizes/:quizId(\\d+)/answer', quiz_controller.answer);
 router.get('/quizes/new', quiz_controller.new);
-router.get('/quizes/create', quiz_controller.create);
+router.post('/quizes/create', quiz_controller.create);
 
 /* Creditos */
 router.get('/author', function (req, res) {
