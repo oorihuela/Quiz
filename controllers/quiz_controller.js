@@ -72,7 +72,7 @@ exports.create = function (req, res) {
     
                 quiz
                 .save({ fields: ["pregunta", "respuesta"] })
-                .then(function() { res.redirect("/quizes"); }) // Redirección HTTP (URL relativo) lista de preguntas
+                .then(function() { res.redirect("/quizes") }) // Redirección HTTP (URL relativo) lista de preguntas
             }
         }
     );
