@@ -3,7 +3,7 @@
 // Autoload - Factoriza el código si ruta incluye :quizId
 
 exports.load = function (req, res, next, quizId) {
-    models.Quiz.find(quizId).then(
+    models.Quiz.findById(quizId).then(
     function (quiz) {
         if (quiz) {
             req.quiz = quiz;
@@ -28,7 +28,7 @@ exports.index = function (req, res) {
 /* GET quizes/:id */
 
 exports.show = function (req, res) {
-    models.Quiz.find(req.params.quizId).then(function (quiz) {
+    models.Quiz.findById(req.params.quizId).then(function (quiz) {
         res.render('quizes/show', { quiz: req.quiz, errors: [] });
     })
 };
