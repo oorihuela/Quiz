@@ -71,7 +71,7 @@ exports.create = function (req, res) {
     .then(
         function(err) {
             if(err) {
-                res.render('quizes/new', { quiz: quiz, errors: err.errors });
+                res.render('quizes/new', { quiz: quiz, errors: err.errors, temas: temas });
             } else {
                 // Guarda en DB los campos pregunta y respuesta de quiz
     
