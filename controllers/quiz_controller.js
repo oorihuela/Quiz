@@ -1,5 +1,10 @@
 ﻿var models = require('../models/models.js');
 
+// Posibles temas a elegir para cada pregunta
+
+var temas = ["Otro", "Humanidades", "Ocio", "Ciencia", "Tecnología" ]; 
+
+
 // Autoload - Factoriza el código si ruta incluye :quizId
 
 exports.load = function (req, res, next, quizId) {
@@ -50,9 +55,9 @@ exports.answer = function (req, res) {
 
 exports.new = function (req, res) {
     var quiz = models.Quiz.build( // crea objeto Quiz
-        { pregunta: "Pregunta", respuesta: "Respuesta" }
+        //{ pregunta: "Pregunta", respuesta: "Respuesta" }
     );
-    res.render('quizes/new', { quiz: quiz, errors: [] });
+    res.render('quizes/new', { quiz: quiz, errors: [], temas: temas });
 };
 
 
@@ -84,7 +89,7 @@ exports.create = function (req, res) {
 exports.edit = function (req, res) {
     var quiz = req.quiz; // autoload de instancia de quiz
         
-    res.render('quizes/edit', { quiz: quiz, errors: [] });
+    res.render('quizes/edit', { quiz: quiz, errors: [], temas: temas });
 };
 
 
