@@ -35,7 +35,13 @@ header, nav, section, footer
 
 .main input
 {
-    margin:5px 0px;    
+    margin:5px 0px;
+    padding:2px;    
+}
+
+.main p
+{
+    margin-bottom:5px;    
 }
 
 footer p, div
