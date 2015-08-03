@@ -83,3 +83,13 @@ nav span
 {
     margin-bottom:10px;    
 }
+
+.contentcentered
+{
+    text-align:center;    
+}
+
+.tablecentered
+{
+    margin:0px auto;    
+}

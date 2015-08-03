@@ -1,5 +1,5 @@
-<div style="width:100%;display:block;margin:0px auto;">
-  <table>
+<div class="contentcentered">
+  <table class="tablecentered">
   <% var i; for(i=0; i < quizes.length; i++) { %>
 	  <tr>
       <td><a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></td>
@@ -12,7 +12,7 @@
     </tr>
   <% } %>
   </table>
-</P>
+</div>
 
 <p>
   <a href="/quizes/new">
