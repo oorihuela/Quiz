@@ -33,6 +33,11 @@ header, nav, section, footer
     text-align:center;
 }
 
+.main input
+{
+    margin:5px 0px;    
+}
+
 footer p, div
 {
     margin-bottom:10px;
