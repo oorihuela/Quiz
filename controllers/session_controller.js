@@ -1,4 +1,15 @@
-﻿/* GET login - Formulario de login */
+﻿/* MW de autorización de accesos HTTP restringidos */
+
+exports.loginRequired = function (req, res, next) {
+    if(req.session.user) {
+        next();
+    } else{
+        res.redirect("/login");
+    }
+};
+
+
+/* GET login - Formulario de login */
 
 exports.new = function (req, res) {
     var errors = req.session.errors || {};
