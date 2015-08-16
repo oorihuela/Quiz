@@ -32,7 +32,7 @@ router.delete('/quizes/:quizId(\\d+)', session_controller.loginRequired,quiz_con
 /* Definición de rutas de comentarios */
 router.get('/quizes/:quizId(\\d+)/comments/new', comment_controller.new);
 router.post('/quizes/:quizId(\\d+)/comments', comment_controller.create);
-router.post('/quizes/:quizId(\\d+)/comments/:commentId(\\d+)/publish', session_controller.loginRequired, comment_controller.publish);
+router.get('/quizes/:quizId(\\d+)/comments/:commentId(\\d+)/publish', session_controller.loginRequired, comment_controller.publish);
 
 /* Creditos */
 router.get('/author', function (req, res) {
