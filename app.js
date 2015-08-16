@@ -53,6 +53,7 @@ app.use(function (req, res, next) {
             if ((new Date()).getTime() - req.session.ultimoclick > req.session.sessionTimeOut) { // Si ha pasado más tiempo del definido en req.session.sessionTimeOut, eliminamos la sesión
                 delete req.session.user;     // eliminamos el usuario
                 delete req.session.ultimoclick;    // eliminamos la marca de tiempo
+                res.render('sessions/new', { errors: [{ "message": "La sesión ha caducado, por favor, identifíquese otra vez"}] });
             }else{ // Si ha pasado menos tiempo del definido en req.session.sessionTimeOut, actualizamos el valor del registro del último click
                 req.session.ultimoclick = (new Date()).getTime();
             }
