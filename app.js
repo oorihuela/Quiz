@@ -1,4 +1,4 @@
-var express = require('express');
+ï»¿var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -28,9 +28,9 @@ app.use(cookieParser('Quiz 2015'));
 app.use(session());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Helpers dinámicos
+// Helpers dinÃ¡micos
 app.use(function (req, res, next) {
-    // guardar path en session.redir para después de login
+    // guardar path en session.redir para despuÃ©s de login
     if (req.method === 'GET' && !req.path.match(/\/login|\/logout/)) {
         req.session.redir = req.path;
     }
@@ -41,20 +41,20 @@ app.use(function (req, res, next) {
     next();
 });
 
-// Mecanismo de autologout después de inactividad de 2 minutos
+// Mecanismo de autologout despuÃ©s de inactividad de 2 minutos
 app.use(function (req, res, next) {
 
-    req.session.sessionTimeOut = 120000; // Almacenamos en una variable el valor de expiración de la sesion
+    req.session.sessionTimeOut = 120000; // Almacenamos en una variable el valor de expiraciÃ³n de la sesion
 
     if(req.session.user){ // si existe sesion
         if(!req.session.ultimoclick){ // No existe registro de ultimo click, lo creamos
             req.session.ultimoclick = (new Date()).getTime();
         }else{
-            if ((new Date()).getTime() - req.session.ultimoclick > req.session.sessionTimeOut) { // Si ha pasado más tiempo del definido en req.session.sessionTimeOut, eliminamos la sesión
+            if ((new Date()).getTime() - req.session.ultimoclick > req.session.sessionTimeOut) { // Si ha pasado mÃ¡s tiempo del definido en req.session.sessionTimeOut, eliminamos la sesiÃ³n
                 delete req.session.user;     // eliminamos el usuario
                 delete req.session.ultimoclick;    // eliminamos la marca de tiempo
-                res.render('sessions/new', { errors: [{ "message": "La sesión ha caducado, por favor, identifíquese otra vez"}] });
-            }else{ // Si ha pasado menos tiempo del definido en req.session.sessionTimeOut, actualizamos el valor del registro del último click
+                res.render('sessions/new', { errors: [{ "message": "La sesiÃ³n ha caducado, por favor, identifÃ­quese otra vez"}] });
+            }else{ // Si ha pasado menos tiempo del definido en req.session.sessionTimeOut, actualizamos el valor del registro del Ãºltimo click
                 req.session.ultimoclick = (new Date()).getTime();
             }
         }
