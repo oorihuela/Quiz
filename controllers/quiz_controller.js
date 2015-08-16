@@ -75,7 +75,6 @@ exports.answer = function (req, res) {
     } else { res.redirect('/quizes'); } 
 };
 
-
 /* GET quizes/new */
 
 exports.new = function (req, res) {
