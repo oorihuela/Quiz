@@ -72,9 +72,7 @@ exports.answer = function (req, res) {
             resultado = 'Correcto';
         }
         res.render('quizes/answer', { quiz: req.quiz, respuesta: resultado, errors: [] });
-    } else {
-
-    }else{ res.redirect('/quizes'); } 
+    } else { res.redirect('/quizes'); } 
 };
 
 
