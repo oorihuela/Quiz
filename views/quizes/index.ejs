@@ -29,7 +29,7 @@
 	  <tr>
       <td><a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></td>
       <td>&nbsp;</td>
-      <td><a href="quizes/"<%= quizes[i].id %>"><%= quizes[i].tema %></a></td>
+      <td><a href="quizes/<%= quizes[i].id %>"><%= quizes[i].tema %></a></td>
       <td>&nbsp;</td>
       <% if (session.user) { %>
       <td><a href="quizes/<%= quizes[i].id %>/edit"><button>Editar</button></a></td>
